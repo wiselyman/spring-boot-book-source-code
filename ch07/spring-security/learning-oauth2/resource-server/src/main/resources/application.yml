@@ -1,0 +1,13 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          public-key-location: classpath:public.txt
+#          jwk-set-uri: http://localhost:8080/.well-known/jwks.json
+
+
+server:
+  port: 8082
+
+

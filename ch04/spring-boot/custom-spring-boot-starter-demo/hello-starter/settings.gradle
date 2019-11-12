@@ -1,0 +1,4 @@
+rootProject.name = 'hello-starter'
+include 'hello-spring-boot-autoconfigure'
+include 'hello-spring-boot-starter'
+

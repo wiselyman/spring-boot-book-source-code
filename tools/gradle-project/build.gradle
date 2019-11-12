@@ -1,0 +1,10 @@
+task hello {
+    doLast {
+        println 'Hello World!'
+    }
+}
+task hello2 {
+    doLast {
+        println 'Hello Gradle!'
+    }
+}

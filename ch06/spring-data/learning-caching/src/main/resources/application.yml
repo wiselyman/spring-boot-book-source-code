@@ -1,0 +1,18 @@
+spring:
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    password: zzzzzz
+    port: 6379
+  datasource:
+    url: jdbc:mysql://localhost:3306/first_db?useSSL=false
+    username: root
+    password: zzzzzz
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+    continue-on-error: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update

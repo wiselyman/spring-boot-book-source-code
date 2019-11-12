@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: reactive-stream-consumer
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost
+          defaultBrokerPort: 9092
+      bindings:
+        input:
+          destination: msgTopic
+          contentType: application/json
+          group: msgInGroup
+server:
+  port: 8086
+

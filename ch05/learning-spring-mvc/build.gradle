@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.0.M5'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'top.wisely'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/snapshot' }
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+//	implementation ('org.springframework.boot:spring-boot-starter-web'){
+//		exclude module: 'spring-boot-starter-tomcat'
+//	}
+//	implementation 'org.springframework.boot:spring-boot-starter-jetty'
+//	implementation ('org.springframework.boot:spring-boot-starter-web'){
+//		exclude module: 'spring-boot-starter-tomcat'
+//	}
+//	implementation 'org.springframework.boot:spring-boot-starter-undertow'
+//	implementation 'com.google.code.gson:gson'
+//
+//	implementation 'javax.json.bind:javax.json.bind-api'
+//	implementation 'org.apache.geronimo.specs:geronimo-json_1.1_spec:1.2'
+//	implementation 'org.apache.johnzon:johnzon-jsonb'
+	implementation 'org.webjars:bootstrap:4.3.1'
+	implementation 'org.webjars:jquery:3.4.1'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

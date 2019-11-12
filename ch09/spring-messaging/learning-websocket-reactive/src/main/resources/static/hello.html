@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+<div>
+    <button onclick="connect()">连接</button>
+    <button onclick="disconnect()">关闭</button>
+
+</div>
+<div>
+<input type="text" id="msg"/>
+<button onclick="send()">发送</button>
+</div>
+<div id="response"></div>
+</body>
+<script>
+    var ws = null;
+    var url = "ws://localhost:8080/hello";
+    function connect() {
+        ws = new WebSocket(url);
+        ws.onopen = function() {
+            alert("连接成功")
+        };
+        ws.onmessage = function(event) {
+            $("#response").append(event.data + '<br>');
+        };
+
+        ws.onclose = function(event) {
+           alert("关闭成功")
+        };
+    }
+
+    function disconnect() {
+            ws.close();
+    }
+
+    function send() {
+        if (ws != null) {
+
+            ws.send($("#msg").val());
+        } else {
+            alert('连接已关闭，请重连');
+        }
+    }
+
+</script>
+</html>

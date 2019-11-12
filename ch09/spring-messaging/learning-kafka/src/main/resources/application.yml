@@ -1,0 +1,28 @@
+spring:
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+    producer:
+#      key-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+#      key-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: consumers
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: top.wisely.learningkafka.messaging
+    streams:
+      application-id: kafka-streams-demo
+      properties:
+        default:
+          key:
+            serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+          value:
+            serde: org.springframework.kafka.support.serializer.JsonSerde
+        spring:
+          json:
+            trusted:
+              packages: top.wisely.learningkafka.messaging

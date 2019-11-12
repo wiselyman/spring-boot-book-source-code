@@ -1,0 +1,21 @@
+dependencies {
+    compile 'top.wisely:hello:1.0-SNAPSHOT'
+}
+
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username "myMavenRepo"
+                password "test"
+            }
+            url "https://mymavenrepo.com/repo/XL62J2nMpLk4ILr5VES7/"
+        }
+    }
+
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}

@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: wisely
+      password: zzzzzz
+      database: first_db

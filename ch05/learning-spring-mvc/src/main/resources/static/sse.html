@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>SSE Demo</title></head>
+<body>
+<div id="msgFromSse"></div>
+<script>
+var source = new EventSource("/async/1/sse")
+source.addEventListener('message', function (ev) { {
+    document.getElementById("msgFromSse").innerHTML = ev.data;
+} });
+
+source.addEventListener('open', function (ev) {
+    console.log("连接成功")
+}, false);
+
+source.addEventListener('error',function (ev) {
+    if (ev.readyState == EventSource.CLOSED){
+        console.log("连接毅关闭");
+    } else {
+        console.log(e.readyState);
+    }
+}, false);
+</script>
+</body>
+</html>

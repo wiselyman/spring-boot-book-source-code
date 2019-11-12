@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: address-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/first_db
+    username: wisely
+    password: zzzzzz
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost
+          defaultBrokerPort: 9092
+      bindings:
+        person-in:
+          destination: personTopic
+          contentTypem : application/json
+          group: personInGroup
+        address-out:
+          destination: addressTopic
+          contentType: application/json
+server:
+  port: 8084

@@ -1,0 +1,13 @@
+spring:
+  rsocket:
+    server:
+      address: localhost
+      port: 9898
+      transport: tcp
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: wisely
+      password: zzzzzz
+      database: first_db

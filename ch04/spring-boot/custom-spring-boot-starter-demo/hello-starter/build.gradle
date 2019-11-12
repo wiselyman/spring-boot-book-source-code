@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url 'https://repo.spring.io/milestone' }
+
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.2.0.M1"
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url 'https://repo.spring.io/milestone' }
+        maven {
+            credentials {
+                username "myMavenRepo"
+                password "test"
+            }
+            url "https://mymavenrepo.com/repo/XL62J2nMpLk4ILr5VES7/"
+        }
+    }
+    group = "top.wisely"
+    version = "1.0-SNAPSHOT"
+
+    apply plugin: 'java'
+    apply plugin: "io.spring.dependency-management"
+    apply plugin: 'maven-publish'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencyManagement {
+        imports {
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        }
+
+    }
+}
+

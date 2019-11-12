@@ -1,0 +1,27 @@
+#spring.mvc.date-format: dd/MM/yyyy
+#spring.jackson.date-format: yyyy-MM-dd
+#spring.jackson.date-format: dd/MM/yyyy
+#logging.level.ROOT: debug
+#spring.mvc.pathmatch.use-suffix-pattern: true
+spring.servlet.multipart.max-file-size: 10MB
+
+spring.mvc.contentnegotiation.favor-path-extension: true
+spring.mvc.pathmatch.use-registered-suffix-pattern: true
+spring.mvc.contentnegotiation.media-types.ap: application/another-person
+spring.jackson.serialization.indent_output: true
+
+#spring.http.converters.preferred-json-mapper: jackson
+spring.resources.static-locations: classpath:/my-static/,classpath:/META-INF/resources/, classpath:/resources/,classpath:/static/, classpath:/public/
+
+#server.port: 8080
+server.compression.enabled: true
+
+#server:
+#  ssl:
+#    key-store: classpath:keystore.jks
+#    key-store-password: pass1234
+#    key-store-type: JKS
+#    key-alias: wisely
+#    key-password: pass1234
+#
+#server.http2.enabled: true

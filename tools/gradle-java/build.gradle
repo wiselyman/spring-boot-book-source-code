@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+group = 'top.wisely'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework:spring-web:5.1.5.RELEASE'
+}

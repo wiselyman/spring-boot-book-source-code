@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.0.M2'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'top.wisely'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/snapshot' }
+	maven { url 'https://repo.spring.io/milestone' }
+//	maven { url 'http://invesdwin.de/artifactory/invesdwin-oss-remote'}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'org.flywaydb:flyway-core'
+//	implementation 'com.vladmihalcea:hibernate-types-52:2.4.3'
+	runtimeOnly 'mysql:mysql-connector-java'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+

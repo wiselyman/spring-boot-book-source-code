@@ -1,0 +1,13 @@
+master:
+  serviceType: NodePort
+  adminUser: wisely
+  adminPassword: zzzzzz
+  installPlugins:
+    - kubernetes:1.17.2
+    - workflow-job:2.33
+    - workflow-aggregator:2.6
+    - credentials-binding:1.19
+    - git:3.10.1
+    - blueocean:1.17.0
+#persistence:
+#  storageClass: standard

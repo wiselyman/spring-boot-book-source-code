@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: use-pvc-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: another-tomcat
+  template:
+    metadata:
+      labels:
+        app: another-tomcat
+    spec:
+      volumes:
+        - name: demo
+          persistentVolumeClaim:
+            claimName: my-pvc
+      containers:
+        - name: another-tomcat
+          image: tomcat:9
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: "/files"
+              name: demo

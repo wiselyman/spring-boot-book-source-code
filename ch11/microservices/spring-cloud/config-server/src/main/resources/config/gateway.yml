@@ -1,0 +1,35 @@
+server:
+  port: 81
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: discoveryClient
+        uri: lb://discovery-client
+        predicates:
+        - Path=/dis/**
+        filters:
+        - RewritePath=/dis/(?<segment>.*), /$\{segment}
+      - id: uaa
+        uri: lb://auth-server
+        predicates:
+        - Path=/uaa/**
+        filters:
+        - RewritePath=/uaa/(?<segment>.*), /$\{segment}
+      - id: resource1
+        uri: lb://resource-server
+        predicates:
+        - Path=/res/**
+        filters:
+        - RewritePath=/res/(?<segment>.*), /$\{segment}
+      - id: feign
+        uri: lb://feign-service
+        predicates:
+        - Path=/fgn/**
+        filters:
+        - RewritePath=/fgn/(?<segment>.*), /$\{segment}

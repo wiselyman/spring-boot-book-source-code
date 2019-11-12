@@ -1,0 +1,26 @@
+version: "3"
+services:
+  prom:
+    image: prom/prometheus:v2.11.1
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    networks:
+      metrics:
+        aliases:
+          - prometheus
+  grafana:
+    image: grafana/grafana:6.3.2
+    ports:
+      - 3000:3000
+    environment:
+      - GF_SECURITY_ADMIN_USER=wisely
+      - GF_SECURITY_ADMIN_PASSWORD=zzzzzz
+    networks:
+      metrics:
+        aliases:
+          - grafana
+
+networks:
+  metrics:

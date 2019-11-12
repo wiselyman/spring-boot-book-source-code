@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'top.wisely'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'io.projectreactor:reactor-core:3.2.9.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

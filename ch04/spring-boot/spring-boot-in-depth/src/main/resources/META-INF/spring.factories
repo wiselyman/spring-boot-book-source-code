@@ -1,0 +1,3 @@
+org.springframework.context.ApplicationListener=top.wisely.springbootindepth.listener.MyListener
+org.springframework.boot.env.EnvironmentPostProcessor=\
+top.wisely.springbootindepth.processor.MyEnvironmentPostProcessor

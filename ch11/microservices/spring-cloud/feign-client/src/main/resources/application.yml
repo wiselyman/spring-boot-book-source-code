@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: feign-client #1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: shutdown
+  endpoint:
+    shutdown:
+      enabled: true
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/

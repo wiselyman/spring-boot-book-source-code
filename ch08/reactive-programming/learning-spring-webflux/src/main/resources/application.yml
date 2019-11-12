@@ -1,0 +1,4 @@
+spring:
+  webflux:
+    date-format: yyyy-MM-dd
+    static-path-pattern: /resouces/static/**

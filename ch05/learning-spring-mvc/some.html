@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CORS</title>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="content"></div>
+<script>
+    $.ajax({
+        url: "http://localhost:8080/people/cors",
+        headers: {
+            "Access-Control-Allow-Origin": "x-requested-with"
+        },
+        type: "GET",
+        success: function() {
+            $("#content").html(data);
+        }
+    });
+</script>
+</body>
+</html>

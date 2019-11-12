@@ -1,0 +1,26 @@
+repositories {
+    dependencies {
+        compileOnly 'top.wisely:hello:1.0-SNAPSHOT'
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor' // generate spring-configuration-metadata.json
+        annotationProcessor 'org.springframework.boot:spring-boot-autoconfigure-processor' // META-INF/spring-autoconfigure-metadata.properties
+        compileOnly 'org.springframework.boot:spring-boot-autoconfigure'
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username "myMavenRepo"
+                password "test"
+            }
+            url "https://mymavenrepo.com/repo/XL62J2nMpLk4ILr5VES7/"
+        }
+    }
+
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}

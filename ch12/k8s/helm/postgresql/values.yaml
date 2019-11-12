@@ -1,0 +1,5 @@
+postgresqlUsername: wisely
+postgresqlPassword: zzzzzz
+postgresqlDatabase: first_db
+persistence:
+  storageClass: standard

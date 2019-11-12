@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: reactive-stream-producer
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost
+          defaultBrokerPort: 9092
+      bindings:
+        output:
+          destination: msgTopic
+          contentType: application/json
+server:
+  port: 8085

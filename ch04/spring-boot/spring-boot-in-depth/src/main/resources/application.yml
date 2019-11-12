@@ -1,0 +1,75 @@
+app:
+  name: spring boot in depth
+  desc: Chapter:${app.name} is hard to learn
+
+author:
+  name: foo
+  age: 40
+  mother-tongue: Chinese # 烤串式
+  second_language: English # 下划线式
+  graduationYear: 2006 # 驼峰式
+  GRADUATED_UNIVERSITY: WHUT # 大写字母
+  address:
+    province: Anhui
+    city: Hefei
+  books:
+    - name: book1
+      price: 89
+    - name: book2
+      price: 109
+  remarks:
+    hobby: reading
+    some: value
+
+#logging.level.org.springframework.web: DEBUG
+#logging.file.name: /Users/wangyunfei/log/log.log
+#logging.file.path: /Users/wangyunfei/log
+#debug: true
+
+#spring:
+#  profiles:
+#    active:
+#      - prod-port
+#      - pord-lazy
+
+
+
+
+#---
+#spring.profiles: prod
+#spring.profiles.include:
+#  - prod-port
+#  - prod-lazy
+#
+#---
+#spring:
+#  profiles: prod-port
+#server:
+#  port: 8888
+#
+#---
+#spring:
+#  profiles: dev-port
+#server:
+#  port: 8080
+#
+#---
+#spring:
+#  profiles: prod-lazy
+#  main:
+#    lazy-initialization: true
+
+#spring:
+#  task:
+#    execution:
+#      pool:
+#        core-size: 10
+#        max-size: 16
+#      thread-name-prefix: mytask-
+
+spring:
+  task:
+    scheduling:
+      pool:
+        size: 5
+      thread-name-prefix: my-scheduling-

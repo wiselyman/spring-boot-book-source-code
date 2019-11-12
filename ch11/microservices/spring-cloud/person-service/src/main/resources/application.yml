@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: person-service
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: wisely
+      password: zzzzzz
+      database: first_db
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost
+          defaultBrokerPort: 9092
+      bindings:
+        address-in:
+          destination: addressTopic
+          contentType: application/json
+          group: addressInGroup
+        person-out:
+          destination: personTopic
+          contentType: application/json
+server:
+  port: 8083
