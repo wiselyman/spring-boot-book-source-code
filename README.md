@@ -1,5 +1,5 @@
 # 开发必备工具.docx
-为了降低书本定价，书中关于工具使用的相关内容在《开发必备工具.docx》，包含：
+为了降低书本定价，书中关于工具使用的相关内容在[《开发必备工具.docx》](https://github.com/wiselyman/spring-boot-book-source-code/blob/master/%E5%BC%80%E5%8F%91%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7.docx?raw=true)，包含：
 1. Intellij IDEA
 2. Gradle
 3. Lombok
