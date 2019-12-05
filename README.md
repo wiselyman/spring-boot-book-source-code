@@ -5,8 +5,9 @@
 3. Lombok
 4. Docker
 5. 其他（Postman，Git）
+其中源码中`tools`是这一章节的源码
 
-# spring-boot-book-source-code
+# 随书源码
 《从企业级开发到云原生微服务:Spring Boot 实战》随书代码
 
 # 已知勘误
